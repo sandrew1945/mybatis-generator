@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+  <classPathEntry location="E:\maven_local_repository\mysql\mysql-connector-java\5.1.25\mysql-connector-java-5.1.25.jar" />
+  <context id="context1" >
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/science?useUnicode=true&amp;characterEncoding=utf8" userId="root" password="workout" />
+    <javaModelGenerator targetPackage="com.hexnology.stes.model" targetProject="src/test/java" />
+    <sqlMapGenerator targetPackage="com.hexnology.stes.mapper" targetProject="src/test/java" />
+    <javaClientGenerator targetPackage="com.hexnology.stes.mapper" targetProject="src/test/java" type="XMLMAPPER" />
+    
+    <table schema="" tableName="tm_role" domainObjectName="TmRolePO" enableCountByExample="false" enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" selectByExampleQueryId="false">
+    	<generatedKey column="role_id" sqlStatement="JDBC" identity="true" />
+    	<columnOverride column="create_date" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+    	<columnOverride column="update_date" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+	</table>
+	
+  </context>
+</generatorConfiguration>
