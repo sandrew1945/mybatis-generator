@@ -15,7 +15,9 @@ It will generate code for all versions of MyBatis, and versions of iBATIS after 
 
 
 修改记录：
+
 2016-11-18
+
 1、修改InnerClass类，增加actualTableName字段，用来保存要生成的表的真实表名，用来添加表名注解
 
 2、修改InnerClass类的getFormattedContent方法，增加真实表名的注解
