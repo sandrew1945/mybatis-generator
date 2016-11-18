@@ -26,45 +26,58 @@ import org.mybatis.generator.config.Context;
  * @author Jeff Butler
  * 
  */
-public abstract class AbstractGenerator {
-    protected Context context;
-    protected IntrospectedTable introspectedTable;
-    protected List<String> warnings;
-    protected ProgressCallback progressCallback;
+public abstract class AbstractGenerator
+{
+	protected Context context;
 
-    public AbstractGenerator() {
-        super();
-    }
+	protected IntrospectedTable introspectedTable;
 
-    public Context getContext() {
-        return context;
-    }
+	protected List<String> warnings;
 
-    public void setContext(Context context) {
-        this.context = context;
-    }
+	protected ProgressCallback progressCallback;
 
-    public IntrospectedTable getIntrospectedTable() {
-        return introspectedTable;
-    }
+	public AbstractGenerator()
+	{
+		super();
+	}
 
-    public void setIntrospectedTable(IntrospectedTable introspectedTable) {
-        this.introspectedTable = introspectedTable;
-    }
+	public Context getContext()
+	{
+		return context;
+	}
 
-    public List<String> getWarnings() {
-        return warnings;
-    }
+	public void setContext(Context context)
+	{
+		this.context = context;
+	}
 
-    public void setWarnings(List<String> warnings) {
-        this.warnings = warnings;
-    }
+	public IntrospectedTable getIntrospectedTable()
+	{
+		return introspectedTable;
+	}
 
-    public ProgressCallback getProgressCallback() {
-        return progressCallback;
-    }
+	public void setIntrospectedTable(IntrospectedTable introspectedTable)
+	{
+		this.introspectedTable = introspectedTable;
+	}
 
-    public void setProgressCallback(ProgressCallback progressCallback) {
-        this.progressCallback = progressCallback;
-    }
+	public List<String> getWarnings()
+	{
+		return warnings;
+	}
+
+	public void setWarnings(List<String> warnings)
+	{
+		this.warnings = warnings;
+	}
+
+	public ProgressCallback getProgressCallback()
+	{
+		return progressCallback;
+	}
+
+	public void setProgressCallback(ProgressCallback progressCallback)
+	{
+		this.progressCallback = progressCallback;
+	}
 }

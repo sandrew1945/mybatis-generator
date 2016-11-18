@@ -15,6 +15,8 @@
  */
 package org.mybatis.generator.api.dom.java;
 
+import static org.mybatis.generator.api.dom.OutputUtilities.newLine;
+
 import org.mybatis.generator.api.dom.OutputUtilities;
 
 /**
@@ -22,6 +24,7 @@ import org.mybatis.generator.api.dom.OutputUtilities;
  */
 public class Field extends JavaElement {
     private FullyQualifiedJavaType type;
+    private String actualColumnName;  // add by weibin 增加真实列名
     private String name;
     private String initializationString;
     private boolean isTransient;
@@ -100,6 +103,9 @@ public class Field extends JavaElement {
         addFormattedAnnotations(sb, indentLevel);
 
         OutputUtilities.javaIndent(sb, indentLevel);
+        sb.append("@ColumnName(\""+getActualColumnName()+"\")");
+        newLine(sb);
+        OutputUtilities.javaIndent(sb, indentLevel);
         sb.append(getVisibility().getValue());
 
         if (isStatic()) {
@@ -129,7 +135,7 @@ public class Field extends JavaElement {
         }
 
         sb.append(';');
-
+        
         return sb.toString();
     }
 
@@ -148,4 +154,14 @@ public class Field extends JavaElement {
     public void setVolatile(boolean isVolatile) {
         this.isVolatile = isVolatile;
     }
+
+	public String getActualColumnName()
+	{
+		return actualColumnName;
+	}
+
+	public void setActualColumnName(String actualColumnName)
+	{
+		this.actualColumnName = actualColumnName;
+	}
 }

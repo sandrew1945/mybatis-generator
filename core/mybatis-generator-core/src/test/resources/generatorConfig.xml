@@ -8,7 +8,12 @@
     <sqlMapGenerator targetPackage="com.hexnology.stes.mapper" targetProject="src/test/java" />
     <javaClientGenerator targetPackage="com.hexnology.stes.mapper" targetProject="src/test/java" type="XMLMAPPER" />
     
-    <table schema="" tableName="tm_role" domainObjectName="TmRolePO" enableCountByExample="false" enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" selectByExampleQueryId="false">
+    <table schema="" tableName="tm_user" domainObjectName="" enableCountByExample="false" enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" selectByExampleQueryId="false">
+    	<generatedKey column="user_id" sqlStatement="JDBC" identity="true" />
+    	<columnOverride column="create_date" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+    	<columnOverride column="update_date" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+	</table>
+    <table schema="" tableName="tm_role" domainObjectName="" enableCountByExample="false" enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" selectByExampleQueryId="false">
     	<generatedKey column="role_id" sqlStatement="JDBC" identity="true" />
     	<columnOverride column="create_date" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
     	<columnOverride column="update_date" jdbcType="TIMESTAMP" javaType="java.util.Date"/>

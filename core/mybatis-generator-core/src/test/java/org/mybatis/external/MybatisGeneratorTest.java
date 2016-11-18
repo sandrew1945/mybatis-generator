@@ -30,7 +30,6 @@ public class MybatisGeneratorTest
 		{
 			List<String> warnings = new ArrayList<String>();
 			boolean overwrite = true;
-			File configFile = new File("src/main/java/generatorConfig.xml");
 			
 			ConfigurationParser cp = new ConfigurationParser(warnings);
 			Configuration config = cp.parseConfiguration(this.getClass().getClassLoader().getResourceAsStream("generatorConfig.xml"));

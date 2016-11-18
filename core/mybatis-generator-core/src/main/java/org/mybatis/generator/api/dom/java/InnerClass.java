@@ -22,6 +22,8 @@ import java.util.List;
 import java.util.Set;
 
 import org.mybatis.generator.api.dom.OutputUtilities;
+import static org.mybatis.generator.api.dom.OutputUtilities.newLine;
+import org.mybatis.generator.internal.util.TableUtil;
 
 /**
  * This class encapsulates the idea of an inner class - it has methods that make
@@ -57,6 +59,11 @@ public class InnerClass extends JavaElement {
     
     /** The initialization blocks. */
     private List<InitializationBlock> initializationBlocks;
+    
+    /**
+     *  add by weibin 增加表真实名称字段，用来生成PO的表名注解
+     */
+    private String actualTableName;
 
     /**
      * Instantiates a new inner class.
@@ -203,10 +210,15 @@ public class InnerClass extends JavaElement {
 
         addFormattedJavadoc(sb, indentLevel);
         addFormattedAnnotations(sb, indentLevel);
-
         OutputUtilities.javaIndent(sb, indentLevel);
+        
+        FullyQualifiedJavaType type = getType();
+        
+        // modi by weibin 添加表名注解
+        // 根据PO名获取表名
+		sb.append("@TableName(\"" + actualTableName + "\")");
+		newLine(sb);
         sb.append(getVisibility().getValue());
-
         if (isAbstract()) {
             sb.append("abstract "); //$NON-NLS-1$
         }
@@ -218,10 +230,10 @@ public class InnerClass extends JavaElement {
         if (isFinal()) {
             sb.append("final "); //$NON-NLS-1$
         }
-
+        
         sb.append("class "); //$NON-NLS-1$
-        sb.append(getType().getShortName());
-
+        //FullyQualifiedJavaType type = getType();
+        sb.append(type.getShortName());
         if (superClass != null) {
             sb.append(" extends "); //$NON-NLS-1$
             sb.append(JavaDomUtils.calculateTypeName(compilationUnit, superClass));
@@ -383,4 +395,15 @@ public class InnerClass extends JavaElement {
     public void setAbstract(boolean isAbtract) {
         this.isAbstract = isAbtract;
     }
+
+	public String getActualTableName()
+	{
+		return actualTableName;
+	}
+
+	public void setActualTableName(String actualTableName)
+	{
+		this.actualTableName = actualTableName;
+	}
+    
 }

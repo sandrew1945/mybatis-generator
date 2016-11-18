@@ -198,6 +198,10 @@ public class FullyQualifiedJavaType implements
      * @return Returns the shortName - including any type arguments.
      */
     public String getShortName() {
+    	
+    	/**
+    	 *   TODO 这个方法返回modal类名及mapper接口类名，修改这里
+    	 */
         StringBuilder sb = new StringBuilder();
         if (wildcardType) {
             sb.append('?');
@@ -228,7 +232,6 @@ public class FullyQualifiedJavaType implements
             }
             sb.append('>');
         }
-
         return sb.toString();
     }
     
