@@ -30,8 +30,6 @@ public class DefaultJavaFormatter implements JavaFormatter {
     protected Context context;
     
     public String getFormattedContent(CompilationUnit compilationUnit) {
-    	System.out.println("compilationUnit =============" + compilationUnit.getClass());
-//    	System.out.println(compilationUnit.getFormattedContent());
         return compilationUnit.getFormattedContent();
     }
 

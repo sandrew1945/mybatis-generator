@@ -141,7 +141,11 @@ public class TopLevelClass extends InnerClass implements CompilationUnit
 			sb.append(importString);
 			newLine(sb);
 		}
-
+		sb.append("import org.apache.ibatis.annotations.TableName;");
+		newLine(sb);
+		sb.append("import org.apache.ibatis.annotations.ColumnName;");
+		newLine(sb);
+		
 		if (importStrings.size() > 0)
 		{
 			newLine(sb);
