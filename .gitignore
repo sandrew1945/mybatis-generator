@@ -51,3 +51,4 @@ RemoteSystemsTempFiles
 /core/mybatis-generator-systests-domtests/.settings
 /core/mybatis-generator-systests-domtests/target
 /.project
+.settings/
